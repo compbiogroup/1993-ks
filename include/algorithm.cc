@@ -81,7 +81,7 @@ std::vector<avocado::Reversal> avocado::Algorithm::Run(avocado::Permutation *pi)
 			j = inverse->elements[s - 1];
 			(i < j) ? avocado::reversal(i + 1, j, pi) : avocado::reversal(j + 1, i, pi);
 
-			if (!AnyDecreasingStrip(pi))
+			if (!pi->IsIdentity() && !AnyDecreasingStrip(pi))
 			{
 				(i < j) ? avocado::reversal(i + 1, j, pi) : avocado::reversal(j + 1, i, pi);
 				l = LargestElementInAllDecreasingStrips(pi);
